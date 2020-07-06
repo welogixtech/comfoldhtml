@@ -1,269 +1,186 @@
-/* ========================================================= *
- * Plugin: bs.push.nav v0.0.5
- * Author: Mohamed Hassan 'pencilpix'.
- * Author Url: mohamedhassan.me
- * License: under MIT
- * ========================================================= */
+(function () {
+  setTimeout(() => {
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector("#js-scroll"),
+      smooth: true,
+      getSpeed: true,
+      getDirection: true,
+      useKeyboard: true,
+    });
+    scroll.on("call", (value, way, obj) => {
+      if (value === "animate") {
+        $(obj.el).addClass($(obj.el).data("animate"));
+      }
+    });
+  }, 1000);
 
-;(function($, window, document, undefined){
-  'use strict';
-  // define the plugin name and the default options
-  var resizeDelay;
-  var randomNo;
-  var backdrop    = '<div class="bsPushNav-backdrop"></div>';
-  var pluginName  = 'bsPushNav';
-  var defaults    = {
-                      breakpoint: 950,
-                      typeClass: 'push',
-                      direction: 'left',
-                      targetsList: [],
-                      templates: {},
-                      bodyWrapper: '#wrapper'
-                    };
+  init();
+})();
 
-  // define the plugin constructor
-  function Plugin(element, options){
-    this.element = element;
-    this._name = pluginName;
-    this._defaults = defaults;
-    this.options = $.extend({}, defaults, options);
+function init() {
+  customCursor();
+  menuBorderAnimation();
 
-    this.init();
+  if ($("#owl_home_banner").length > 0) {
+    $("#owl_home_banner").owlCarousel({
+      nav: false,
+      loop: true,
+      dots: false,
+      autoplay: false,
+      autoplayTimeout: 5000,
+      margin: 0,
+      responsiveClass: true,
+      animateOut: "fadeOut",
+      animateIn: "slideInLeft",
+      responsive: {
+        0: {
+          items: 1,
+        },
+        700: {
+          items: 1,
+        },
+        900: {
+          items: 1,
+          dots: false,
+        },
+      },
+    });
   }
-  // to hold the structure of each menu wrapper
-  Plugin.menuWrapper = '';
+  if ($("#owl_recent_projects").length > 0) {
+    $("#owl_recent_projects").owlCarousel({
+      loop: false,
+      nav: false,
 
-  // to hold if menu enabled or disabled
-  Plugin.enabled = false;
-
-  // random ids
-  function randomIdNo() {
-    return  Math.floor(Math.random() * 1000);
+      margin: 20,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1,
+        },
+        500: {
+          items: 2,
+        },
+        900: {
+          items: 3,
+          dots: true,
+          margin: 20,
+        },
+      },
+    });
+  }
+  if ($("#owl_happy_customer").length > 0) {
+    $("#owl_happy_customer").owlCarousel({
+      loop: false,
+      nav: false,
+      margin: 20,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1,
+        },
+        980: {
+          items: 2,
+        },
+        1150: {
+          items: 2,
+          nav: true,
+          dots: true,
+          margin: 40,
+        },
+      },
+    });
   }
 
-  Plugin.prototype.init = function(){
-    var $element = $(this.element);
-    var lists = this.options.targetsList;
-    randomNo = this.randomNo = randomIdNo();
-    this.isShown = false;
-    this.menuWrapper = '<nav id="bsPushNav' + randomNo + '" class="bsPushNav"></nav>';
-    $element.attr('id', 'bsPushNav' + randomNo + '_btn')
-                  .data('control', '#bsPushNav' + randomNo);
-    this.options.targetsList = (lists.length === 0) ? $element.data('target').split(' ') : lists;
-    // do the logic
-    this.getLists.call(this);
-    this.bindResize.call(this);
-
-    if(this.options.typeClass === 'push'){
-      $('body').addClass('anim');
-    }
-
-    if(this.checkWidth.call(this)) {
-      this.addTemp.call(this);
-    }
-    this.bindClick.call(this);
-    this.handleResize.call(this);
-  };
-
-  Plugin.prototype.getLists = function() {
-    // get the template of each list and its parent.
-    var templates = {};
-    var lists = this.options.targetsList;
-    for (var li in lists){
-      $(lists[li]).parent().addClass('parent-' + randomNo + '-' + lists[li].replace('#', ''));
-      templates[lists[li].replace('#', '')] = {
-        parent: '.' + $(lists[li]).parent().attr('class').replace(/ /g, '.'),
-        template: $(lists[li]).clone()
-      };
-    }
-
-    this.options.templates = templates;
-  };
-
-  // check if the window width < the breakpoint
-  Plugin.prototype.checkWidth = function() {
-    return $(window).width() <= this.options.breakpoint;
-  };
-
-  Plugin.prototype.addTemp = function() {
-    var temps = this.options.templates;
-    var lists = this.options.targetsList;
-    var $element = $(this.element);
-    for(var li in lists) {
-      $(lists[li]).remove();
-    }
-
-    if($(this.options.bodyWrapper).length === 0){
-      $('body').contents().not('script').wrapAll('<div id="' + this.options.bodyWrapper.replace('#', '') + '"></div>');
-    }
-
-    if ($($element.data('control')).length === 0){
-      $(this.options.bodyWrapper).prepend(this.menuWrapper);
-    }
-    $($element.data('control')).addClass(this.options.direction + ' ' + this.options.typeClass);
-
-    for (var temp in temps){
-      $($element.data('control')).append(temps[temp].template);
-    }
-
-    if(!this.enabled){
-      this.enabled = true;
-      this.triggerEvent('menuEnabled', [$element, $($element.data('control'))]);
-    }
-  };
-
-  Plugin.prototype.removeTemp = function() {
-    var temps = this.options.templates;
-    var $element = $(this.element);
-    $('.bsPushNav-backdrop, ' + $element.data('control')).remove();
-    $('body').removeClass('pn-' + this.options.typeClass + '-' + this.options.direction);
-    for(var temp in temps){
-      if($('#' + temp).length === 0){
-        $(temps[temp].parent).append(temps[temp].template);
-      }
-    }
-
-    if(this.enabled){
-      this.enabled = false;
-      this.triggerEvent('menuDisabled', [$element, $($element.data('control'))]);
-    }
-  };
-
-  Plugin.prototype.show = function(){
-    var $element = $(this.element);
-    if(!this.isShown){
-      $($element.data('control')).addClass('active');
-      $('body').addClass('pn-' + this.options.typeClass + '-' + this.options.direction);
-      if($('.bsPushNav-backdrop').length === 0){
-        $(this.options.bodyWrapper).append(backdrop);
-      }
-
-      this.isShown = true;
-      this.triggerEvent('shown', [$element, $($element.data('control'))]);
-    }
-  };
-
-  Plugin.prototype.hide = function(){
-    var $element = $(this.element);
-    $($element.data('control')).removeClass('active');
-    $('body').removeClass('pn-' + this.options.typeClass + '-' + this.options.direction);
-    $('.bsPushNav-backdrop').remove();
-
-    this.isShown = false;
-    this.triggerEvent('hidden', [$element, $($element.data('control'))]);
-  };
-
-  Plugin.prototype.bindClick = function(){
-    var plugin = this;
-    var btn = '#bsPushNav' + randomNo + '_btn';
-    var selector =  '#' + $(plugin.element).attr('id') + ', .bsPushNav-backdrop';
-    $(document).on('click' + '.' + plugin._name, selector, function(e){
-      var target = $(e.target);
-      if(target.is(btn)) { e.preventDefault(); }
-      if(target.is(btn) || target.is($(btn).find('*'))) {
-        if(plugin.checkWidth()){
-          plugin.triggerEvent('beforeShow', [$(btn), $($(btn).data('control'))]);
-          plugin.show();
-        }
-      } else if(plugin.isShown) {
-        plugin.triggerEvent('beforeHide', [$(btn), $($(btn).data('control'))]);
-        plugin.hide();
-      }
-    });
-  };
-
-  Plugin.prototype.bindResize = function(){
-    var plugin = this;
-    var $element = $(plugin.element);
-    var dataSelector = $element.data('toggle');
-
-    if(!dataSelector || dataSelector !== plugin._name) { $element.data('toggle', plugin._name); }
-    $(window).on('resize' + '.' + plugin._name, function(){
-      clearTimeout(resizeDelay);
-      resizeDelay = setTimeout(function(){
-        plugin.triggerEvent('windowResize', [$('[data-toggle="' + plugin._name + '"]')]);
-      }, 250);
-    });
-  };
-
-  // when window is resized handle the template
-  Plugin.prototype.handleResize = function() {
-    var plugin = this;
-    var btn = '#bsPushNav' + randomNo + '_btn';
-    $(btn).on('windowResize' + '.' + plugin._name, function(){
-      if(plugin.checkWidth()){
-        plugin.addTemp.call(plugin);
-      } else {
-        plugin.removeTemp.call(plugin);
-      }
-    });
-  };
-
-  Plugin.prototype.triggerEvent = function(eventName, elAr){
-    for (var el in elAr){
-      elAr[el].trigger(eventName);
-    }
-  };
-
-  Plugin.prototype.destroy = function(){
-    // the logic of destroy the plugin
-    this.removeTemp.call(this);
-    this.unbindEvents();
-    $(this.element).removeData();
-  };
-
-  Plugin.prototype.unbindEvents = function() {
-      // unbind events of the element
-      var plugin = this;
-      var selector = $(plugin.element).attr('id') + ', .bsPushNav-backdrop';
-      $(document).off('.' + plugin._name, '#' + selector);
-      $(this.element).off('.' + plugin._name);
-  };
-
-
-  // init the plugin
-  $.fn[pluginName] = function ( options ) {
-    var args = arguments;
-
-    if (options === undefined || typeof options === 'object') {
-      return this.each(function () {
-        if (!$.data(this, 'plugin_' + pluginName)) {
-          $.data(this, 'plugin_' + pluginName, new Plugin( this, options ));
-        }
-      });
-    } else if (typeof options === 'string' && options[0] !== '_' && options !== 'init') {
-      var returns;
-
-      this.each(function () {
-        var instance = $.data(this, 'plugin_' + pluginName);
-
-        if (instance instanceof Plugin && typeof instance[options] === 'function') {
-          returns = instance[options].apply( instance, Array.prototype.slice.call( args, 1 ) );
-        }
-
-        if (options === 'destroy') {
-          $.data(this, 'plugin_' + pluginName, null);
-        }
-      });
-
-      return returns !== undefined ? returns : this;
-    }
-  };
-
-  // call the plugin on data attributes
-  $(document).ready(function() {
-    var $menuBtn = $('[data-toggle="bsPushNav"]');
-    $menuBtn.each(function(){
-      var $self = $(this);
-      var mOpt = {};
-      // set options
-      if($self.data('target')) { mOpt.targetsList = $self.data('target').split(' '); }
-      if($self.data('direction')) {mOpt.direction = $self.data('direction'); }
-      if($self.data('breakpoint')) {mOpt.breakpoint = $self.data('breakpoint'); }
-      if($self.data('type')) {mOpt.typeClass = $self.data('type'); }
-      if($self.data('wrapper')) {mOpt.bodyWrapper = $self.data('wrapper'); }
-
-      $self.bsPushNav(mOpt);
-    });
+  $('#space_saving_video').on('hidden.bs.modal', function() {
+    var $this = $(this).find('iframe'),
+      tempSrc = $this.attr('src');
+    $this.attr('src', "");
+    $this.attr('src', tempSrc);
   });
-})(jQuery, window, document);
+
+
+  $('.js-locationImg').hover(function(){
+        var imgid = $(this).data('imgid');
+        TweenLite.to('#'+imgid, .8, {css: {scaleX: 1.3, scaleY: 1.3, zIndex:5},ease: Circ.easeOut})
+      },function(){
+        var imgid = $(this).data('imgid');
+        TweenLite.to('#'+imgid, .8, {css: {scaleX: 1, scaleY: 1, zIndex:1},ease: Circ.easeOut})
+    }
+);
+
+  $('.js-learWhyComfoldBtn').on('click',function(){
+        $('.js-learnWhyComfold').find('img').removeClass('fadeInUp').addClass('fadeOutUp');
+      var $this = $(this),
+       fristImg = $this.attr('data-image-1-src'),
+       secondImg = $this.attr('data-image-2-src'),
+       thirdImg = $this.attr('data-image-3-src');
+       setTimeout(() => {
+            $('.js-learnWhyComfold').find('img').removeClass('fadeOutUp');
+            $('#firstImg').attr('src', fristImg).addClass('fadeInUp');
+            $('#secondImg').attr('src', secondImg).addClass('fadeInUp');
+            $('#thirdImg').attr('src', thirdImg).addClass('fadeInUp');
+       },750);
+       
+  })
+
+}
+
+function customCursor() {
+  var cursorDiv = $(document).find(".js-mouse"),
+    defautTxt = cursorDiv.find(".js-mouse-text").text();
+  if (cursorDiv.length > 0) {
+    cursorDiv.attr("data-mouse", "");
+    $(document).on("mousemove", function (event) {
+      cursorDiv.addClass("is-active");
+      TweenLite.to(cursorDiv, 0, {
+        x: event.clientX,
+        y: event.clientY,
+        force3D: true,
+      });
+    });
+    $(document).on("mouseleave", "[data-mouse]", function (event) {
+      if ($(event.toElement).closest("[data-mouse]")) {
+        var element = $(event.toElement).closest("[data-mouse]"),
+          attrVal = element.data("mouse");
+        element.data("mouse-text") &&
+          cursorDiv.find(".js-mouse-text").text(element.data("mouse-text"));
+        cursorDiv.attr("data-mouse", "").attr("data-mouse", attrVal);
+      } else {
+        cursorDiv.attr("data-mouse", "");
+      }
+    });
+    $(document).on("mouseenter", "[data-mouse]", function () {
+      var element = $(this).data("mouse");
+      if ($(this).data("mouse-text")) {
+        cursorDiv.find(".js-mouse-text").text($(this).data("mouse-text"));
+      } else {
+        cursorDiv.find(".js-mouse-text").text(defautTxt);
+      }
+      cursorDiv.attr("data-mouse", "").attr("data-mouse", element);
+    });
+  }
+}
+function menuBorderAnimation() {
+  var nav = $(document).find(".navbar-nav-custom"),
+    navLine = $(document).find(".js-site-nav-line"),
+    offsetLeft = nav.offset().left,
+    currentMenu = nav.find("li.current-menu-item > a"),
+    currentMenuOffset = currentMenu.offset(),
+    currentMenuLeft = currentMenuOffset
+      ? currentMenuOffset.left - offsetLeft
+      : 0,
+    currentMenuWidth = currentMenuOffset ? currentMenu.width() : 0;
+  navLine.width(currentMenuWidth).css("left", currentMenuLeft),
+    nav.find("li").each(function () {
+      var element = $(this);
+      element.on("mouseover", function (e) {
+        var sigleMenu = $(this).find("a"),
+          sigleMenuLeft = sigleMenu.offset().left - offsetLeft,
+          singelMenuRight = sigleMenu.width();
+        navLine.width(singelMenuRight).css("left", sigleMenuLeft);
+      }),
+        element.on("mouseout", function (e) {
+          navLine.width(currentMenuWidth).css("left", currentMenuLeft);
+        });
+    });
+}

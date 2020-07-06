@@ -300,8 +300,8 @@
     .bsPushNav-backdrop {
         width: 100%;
         background-color: rgba(0, 0, 0, .2);
-        left: 0;
-        z-index: 700
+        right: -300px;
+        z-index: 2
     }
     .bsPushNav, .bsPushNav-backdrop {
         height: 100%;
@@ -311,14 +311,14 @@
     .bsPushNav {
         width: 300px;
         background-color: #fff;
-        z-index: 2;
+        z-index: 3;
         -webkit-transition: all .3s ease-in-out;
         transition: all .3s ease-in-out;
 		top: 25px;
 		padding-top: 50px;
-		border-radius: 0px 10pxpx 0px 0px;
-    -moz-border-radius: 0px 10px 0px 0px;
-    -webkit-border-radius: 0px 10px 0px 0px;
+		border-radius: 10px 0px 0px 0px;
+    -moz-border-radius: 10px 0px 0px 0px;
+    -webkit-border-radius: 10px 0px 0px 0px;
     }
     .bsPushNav.left {
         left: -300px; /*-webkit-transform: translateX(-300px); transform: translateX(-300px) */

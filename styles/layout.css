@@ -22,6 +22,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     background: #221C35;
     color: #FFF;
 }
+
+
+
+.o-scroll {
+    overflow: hidden;
+  }
 /************************************************************************************
 CUSTOM MOUSE CURSOR
 *************************************************************************************/
