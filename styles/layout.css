@@ -23,11 +23,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     color: #FFF;
 }
 
-
-
-.o-scroll {
-    overflow: hidden;
-  }
 /************************************************************************************
 CUSTOM MOUSE CURSOR
 *************************************************************************************/
@@ -217,7 +212,8 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
 STRUCTURE
 *************************************************************************************/
 main{
-	background: #FFFFFF;
+    background: #FFFFFF;
+    overflow: hidden;
 }
 .pagewrap {
     width: 90%;
