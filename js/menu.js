@@ -15,7 +15,7 @@
   var defaults    = {
                       breakpoint: 1024,
                       typeClass: 'push',
-                      direction: 'left',
+                      direction: 'right',
                       targetsList: [],
                       templates: {},
                       bodyWrapper: '#wrapper'
@@ -168,7 +168,7 @@
   Plugin.prototype.bindClick = function(){
     var plugin = this;
     var btn = '#bsPushNav' + randomNo + '_btn';
-    var selector =  '#' + $(plugin.element).attr('id') + ', .bsPushNav-backdrop';
+    var selector =  '#' + $(plugin.element).attr('id') + ', .bsPushNav-backdrop , .nav-close';
     $(document).on('click' + '.' + plugin._name, selector, function(e){
       var target = $(e.target);
       if(target.is(btn)) { e.preventDefault(); }
