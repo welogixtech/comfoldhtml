@@ -7,19 +7,9 @@
     margin-left: 50px;
   }
 
-  .mid-customer-wrap {
-    width: 90%;
-    margin: 0 auto;
-  }
+  
 
-  .mid-customer-box-top {
-    margin-right: 100px;
-    margin-left: -100px;
-  }
-
-  .mid-customer-box {
-    padding-left: 100px;
-  }
+ 
 
   .category-top-wrapper .category-sec:nth-child(odd) {
     padding-left: 0;
@@ -274,6 +264,15 @@
   .mid-happy-customer {
     padding: 90px 0 120px;
   }
+  .mid-customer-box-top{
+    margin-left: -65px;
+  }
+  .mid-customer-box {
+    padding-left: 65px;
+}
+.mid-customer-wrap {
+  width: 80%; 
+}
 
   .mid-main {
     padding-top: 60px;
@@ -338,7 +337,7 @@
   }
 
   .mid-location-right-info {
-    padding-right: 90px !important;
+    /* padding-right: 90px !important; */
   }
 
   .mid-project-box aside {
@@ -603,8 +602,7 @@
 
   .play-icon {
     width: 60px;
-    height: 60px;
-    background: url("../images/Play-icon.svg") no-repeat center;
+    height: 60px; 
     margin-left: -30px;
     margin-top: -30px;
     background-size: 60px;
@@ -1236,8 +1234,18 @@
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
+    
   }
-
+  .mid-location-right{
+    padding-top: 45px !important;
+  }
+  .mid-location-right-adrs ul li:first-child .mid-location {
+    max-width: 43%;
+    margin-right: 5%;
+}
+.mid-location-right-adrs ul li{
+  width: 50%;
+}
   .category-feature-row {
     display: block !important;
   }
@@ -1308,6 +1316,8 @@
 @media screen and (max-width:960px) {
   .mid-video-main .pagewrap {
     display: block !important;
+    padding-left: 7%;
+    padding-right: 7%;
   }
 
   .mid-video-right {
@@ -1724,8 +1734,9 @@
     border-radius: 0 0 80px 0;
     -moz-border-radius: 0 0 80px 0;
     -webkit-border-radius: 0 0 80px 0;
-    padding: 218px 30px 70px 35px;
+    padding: 160px 30px 40px 35px;
     font-size: 16px;
+    margin-top: -130px;
   }
 
   .mid-btm-box {
@@ -1744,7 +1755,7 @@
     width: 60px;
     height: 60px;
     background-size: 27px;
-    top: 150px;
+    top: 98px;
     left: 15px;
   }
 
@@ -1817,6 +1828,10 @@
     margin-left: 0;
     margin-right: 10px;
   }
+  .modal-dialog.modal-custom-width {
+    max-width: 90%;
+    margin: 0 auto;
+  }
 
 }
 @media screen and (max-width:575px) {
@@ -1853,6 +1868,7 @@
   .mid-location-right {
     display: block !important;
     padding-bottom: 45px;
+    padding-top: 25px;
   }
 
   .mid-location-right-info {
@@ -1863,7 +1879,16 @@
 
   .mid-location-right-adrs ul li {
     min-height: inherit;
+    width: 100%;
+    margin-top: 30px;
   }
+  .mid-location-right-adrs ul li:first-child .mid-location {
+    max-width: 100%;
+    margin-right: 0;
+}
+.mid-location-right-adrs ul li:first-child { 
+  margin: 0;
+}
 
   .mid-project-box-head {
     padding: 40px 15px;

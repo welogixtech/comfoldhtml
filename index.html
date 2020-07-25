@@ -25,7 +25,7 @@
     <div class="header__call-us"><img src="images/telephone_icon.svg" alt=""/> <span>1800 258 4499</span></div>
     <div class="header__btns">
       <button data-mouse="btn" type="button" class="btn btn-primary-comf">Customized Solutions</button>
-      <button data-mouse="btn" type="button" class="btn btn-secondary-comf">Enquiry</button>
+      <button data-mouse="btn" type="button" class="btn btn-secondary-comf" data-toggle="modal" data-target="#bookAcall">Enquiry</button>
     </div>
   </div>
   <div class="header__right-bottom">
@@ -56,7 +56,7 @@
             <li class="mobile-header__right-top">
               <div class="header__btns">
                 <button type="button" class="btn btn-primary-comf">Customized Solutions</button>
-                <button type="button" class="btn btn-secondary-comf">Experience Centre</button>
+                <button data-mouse="btn" type="button" class="btn btn-secondary-comf" data-toggle="modal" data-target="#bookAcall">Enquiry</button>
               </div>
               <div class="header__call-us"><img src="images/telephone_icon.svg" alt=""> <span>1800 258 4499</span></div>
             </li>
@@ -370,9 +370,9 @@ product service</h4>
       <div class="mid-btm-right-pic1"><img src="images/location/mid-btm-right_pic1.png" id="firstImgLocation" alt="" class="animated" data-scroll data-scroll-call="animate" data-animate="fadeInUp" > </div>
       <div class="mid-btm-right-pic2"><img src="images/location/mid-btm-right_pic2.png" id="secondImgLocation" alt="" class="animated" data-scroll data-scroll-call="animate" data-animate="fadeInUp" > <img src="images/location/mid-btm-right_pic3.png" alt="" id="thirdImgLocation" class="animated" data-scroll data-scroll-call="animate" data-animate="fadeInUp" > </div>
     </div>
-    <div class="col-xl-7 col-lg-7 mid-location-right d-flex align-self-center">
-      <div class="mid-location-right-info col-8 align-self-center">
-        <h4>Touch and feel at Comfold experiance centers</h4>
+    <div class="col-xl-7 col-lg-7 mid-location-right align-self-center">
+      <div class="mid-location-right-info  align-self-center">
+        <h4>Touch and feel at <br>Comfold experiance centers</h4>
         <aside>Visit us inperson and get to know us better.
           Experiance our space saving furniture piece first hand in a setting designed to feel like home.</aside>
       </div>
@@ -386,27 +386,37 @@ product service</h4>
         
         	data-image-1-src="images/location/mid-btm-right_pic1.png"
         	data-image-2-src="images/location/mid-btm-right_pic2.png"
-        	data-image-3-src="images/location/mid-btm-right_pic3.png">
+          data-image-3-src="images/location/mid-btm-right_pic3.png">
+          
             <h4>Bangalore</h4>
+            <div class="mid-location"> 
             <h5>HSR Layout</h5>#192, HSR Layout, Outer Ring Road, Near Silk Board Junction Bangalore 560102
-
-<h5>Kammanahalli</h5>#192, HSR Layout, Outer Ring Road, Near Silk Board Junction Bangalore 560102</li>
+          </div>
+          <div class="mid-location"> 
+          <h5>Kammanahalli</h5>#192, HSR Layout, Outer Ring Road, Near Silk Board Junction Bangalore 560102
+        </div></li>
           <li class="js-imageChangeBtn animated"  
         	data-mouse="btn"
         
         	data-image-1-src="images/location/mid-btm-right_pic_set2_1.jpg"
         	data-image-2-src="images/location/mid-btm-right_pic_set2_2.jpg"
         	data-image-3-src="images/location/mid-btm-right_pic_set2_3.jpg">
+          <div class="mid-location">
             <h4>Vizag</h4>
-            We offers free shipping on all domestic orders </li>
+            We offers free shipping on all domestic orders 
+            </div>
+          </li>
           <li class="js-imageChangeBtn animated" 
         	data-mouse="btn"
         
         	data-image-1-src="images/location/mid-btm-right_pic_set3_1.jpg"
         	data-image-2-src="images/location/mid-btm-right_pic_set3_2.jpg"
-        	data-image-3-src="images/location/mid-btm-right_pic_set3_3.jpg">
+          data-image-3-src="images/location/mid-btm-right_pic_set3_3.jpg">
+          <div class="mid-location">
             <h4>Kochin</h4>
-            Metro Pillar No:92, Near KSRTC Garage, Aluva, Kochi, Kerala 683106 </li>
+            Metro Pillar No:92, Near KSRTC Garage, Aluva, Kochi, Kerala 683106 
+          </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -624,7 +634,52 @@ product service</h4>
 <!---FOOTER--->
 
 </main>
+<!-- Enquiry -->
+<div class="modal fade" id="bookAcall" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-custom-width" role="document">
+    <div class="modal-content modal-bg"> 
+    
 
+      <div class="modal-body enquiry-modal"> 
+		<button data-mouse="btn" type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true"><img src="images/close-btn-2.svg" alt=""></span>
+    </button>
+        <div class="row enquiry-modal-outer">
+          <div class="col-lg-6 enquiry-modal-left"><img src="images/book-a-call.png" alt=""></div>
+          <div class="col-lg-6 enquiry-modal-right">
+            <h4>Book a call</h4>
+            <aside>We’ll chat about your business, answer any call any question you have and show you how timely can help</aside>
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">Your name</label>
+                  <input type="text" class="form-control" id="inputEmail4" >
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">Last Name</label>
+                  <input type="text" class="form-control" id="inputEmail4" >
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">Email Id</label>
+                  <input type="text" class="form-control" id="inputEmail4" >
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">Phone Number</label>
+                  <input type="text" class="form-control" id="inputEmail4" >
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputAddress">Address</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div> 
+              <button data-mouse="btn" type="submit" class="btn btn-primary-comf btn-comf-submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- Modal -->
 <div class="modal fade" id="space_saving_video" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
