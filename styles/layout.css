@@ -1318,9 +1318,9 @@ header {
 .mid-customer-box-top img {
   max-width: 100%;
   height: auto;
-  border-radius: 10px 10px 120px 10px;
-  -moz-border-radius: 10px 10px 120px 10px;
-  -webkit-border-radius: 10px 10px 120px 10px;
+  border-radius: 8px 8px 100px 8px;
+  -moz-border-radius: 8px 8px 100px 8px;
+  -webkit-border-radius: 8px 8px 100px 8px;
 }
 
 .mid-customer-box-middle {
@@ -1329,9 +1329,9 @@ header {
   position: relative;
   font-size: 16px;
   padding: 190px 45px 35px 25px;
-  border-radius: 0 0 120px 0;
-  -moz-border-radius: 0 0 120px 0;
-  -webkit-border-radius: 0 0 120px 0;
+  border-radius: 0 0 100px 0;
+  -moz-border-radius: 0 0 100px 0;
+  -webkit-border-radius: 0 0 100px 0;
   margin-top: -150px;
 }
 
@@ -1542,10 +1542,12 @@ footer {
   max-width: 65%;
 }
 .enquiry-modal-right {
-  padding: 120px 70px 90px  70px !important;
+  padding: 80px  70px !important;
 }
 .enquiry-modal-left{
   padding: 0 !important;
+  background: url(../images/book-a-call.png) no-repeat center;
+  background-size: cover;
 }
 .enquiry-modal-left img{
   width: 100%;
@@ -1556,9 +1558,12 @@ footer {
 }
 .enquiry-modal .close{
   position: absolute;
-  right: 40px;
-  top: 40px;
+  right: 20px;
+  top: 20px;
   z-index: 5;
+}
+.enquiry-modal .close img{
+  max-width: 25px;
 }
 .enquiry-modal-right h4{
   font-size: 32px;
@@ -2820,6 +2825,9 @@ h3.compare-other {
   margin-left: 12px;
   cursor: pointer;
 }
+.product-list a, .product-list a:hover{
+  color: inherit;
+}
 
 .product-list figure {
   margin: 0;
@@ -3612,4 +3620,119 @@ h3.compare-other {
 
 .dd-container {
   position: relative;
+}
+.customize-bed-wraper-1 {
+  /* padding-top: 40px; */
+}
+.customize-bed-box-1{
+  width: 50%;
+  margin-top: 70px;
+}
+.customize-bed-box-1 h1{
+  width: 184px;
+  height: 184px;
+  font-size: 100px;
+  position: relative;
+  font-weight: 700;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 34px;
+  color: #fff;
+  background: #B4ECDE;
+  border-radius: 200px 200px 200px 200px;
+-moz-border-radius: 200px 200px 200px 200px;
+-webkit-border-radius: 200px 200px 200px 200px;
+}
+.customize-bed-box-1 h1:after{
+  content: "";
+  background: url(../images/wallbed/option-1bg.svg) no-repeat center left;
+  position: absolute;
+  left: -30px;
+    right: -30px;
+    bottom: -30px;
+    top: -30px;
+}
+.customize-bed-box-1 h1:before{
+  content: "";
+  position: absolute;
+  left: -53px;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid #B4ECDE;
+  top: 50%;
+  margin-top: -7.5%;
+}
+.customize-bed-box-1 h5{
+  font-size: 32px;
+  font-weight: 400;
+  color: #111111;
+  margin-bottom: 45px;
+}
+.customize-bed-box-1 ul{
+  list-style: none;
+  margin: 0;
+}
+.customize-bed-box-1 ul li{
+  display: inline-block;
+  vertical-align: top;
+  text-align: center; 
+  margin-left: 10%;
+}
+.customize-bed-box-1 ul li:first-child{
+  margin-left: 0;
+}
+.customize-bed-box-1 ul li span{
+  font-size: 16px;
+  display: block;
+  margin-top: 20px;
+}
+.cus-option-1 h1{
+  background: #B4ECDE;
+}
+.cus-option-2 h1{
+  background: #F9DC85;
+}
+.cus-option-3 h1{
+  background: #F7DFE7;
+}
+.cus-option-4 h1{
+  background: #D6D9F1;
+}
+.cus-option-2 h1:after{
+  background: url(../images/wallbed/option-2bg.svg) no-repeat center right;
+}
+.cus-option-3 h1:after{
+  background: url(../images/wallbed/option-3bg.svg) no-repeat center left;
+}
+.cus-option-4 h1:after{
+  background: url(../images/wallbed/option-4bg.svg) no-repeat center right;
+}
+.cus-option-2 h1:before{
+  border-right: 15px solid #F9DC85;
+  transform: rotate(180deg);
+  right: -53px;
+  left: auto;
+}
+.cus-option-3 h1:before{
+  border-right: 15px solid #F7DFE7; 
+}
+.cus-option-4 h1:before{
+  border-right: 15px solid #D6D9F1;
+  transform: rotate(180deg);
+  right: -53px;
+  left: auto;
+}
+.customize-bed-box-1 aside {
+  max-width: calc(100% - 275px);
+}
+.cus-option-3 ul li{
+  margin-bottom: 50px;
+ margin-left: 15%;
+}
+.cus-option-3 ul li:nth-child(n+4){
+  margin-left: 8%;
+  margin-bottom: 0;
+}
+.cus-option-3 ul li:nth-child(4){
+  margin-left: 0;
 }
