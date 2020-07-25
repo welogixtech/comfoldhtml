@@ -211,6 +211,13 @@ $(document).ready(function () {
       : $this.parents(".pro-open-close-btn").data("openimg");
     $this.parents("figure").find(".listImg").attr("src", imgSrc);
   });
+  if ($("#myDropdown").length > 0) {
+    $("#myDropdown").ddslick({
+      onSelected: function (selectedData) {
+        //callback function: do something with selectedData;
+      },
+    });
+  }
 });
 
 function loadGallery(setIDs, setClickAttr) {
@@ -261,12 +268,6 @@ function disableButtons(counter_max, counter_current) {
     $("#show-previous-image").hide();
   }
 }
-
-// $("#myDropdown").ddslick({
-//   onSelected: function (selectedData) {
-//     //callback function: do something with selectedData;
-//   },
-// });
 
 $(".scrollTo").click(function (e) {
   e.preventDefault();
