@@ -6,7 +6,9 @@
   .header__icons-right {
     margin-left: 50px;
   }
-
+  .cus-option-3 ul li{ 
+    margin: 0 5% 10% 0 !important;
+  }
   
 
  
@@ -611,6 +613,52 @@
   .listing-sub-category-nav ul li img {
     max-height: 30px;
   }
+  .enquiry-modal-left{
+    max-width: 40% !important;
+    -ms-flex: 0 0 40%;
+    flex: 0 0 40%;
+  }
+  .enquiry-modal-right{
+    max-width: 60% !important;
+    -ms-flex: 0 0 60%;
+    flex: 0 0 60%;
+    padding: 50px !important;
+  }
+  .enquiry-modal-right aside{
+    font-size: 14px;
+  }
+  .enquiry-modal-right .form-control {
+    min-height: inherit;
+  }
+  .enquiry-modal-right h4 {
+    font-size: 28px;
+  }
+  .btn.btn-comf-submit{
+    margin-top: 0;
+    padding: 13px 40px;
+  }
+  .customize-bed-box-1 ul li img {
+    height: 75px;
+    width: auto;
+  }
+  .customize-bed-box-1 ul li span {
+    font-size: 14px;
+  }
+  .cus-option-3 ul li:last-child{
+    margin-right: 0 !important;
+  }
+  .customize-bed-box-1 h5 {
+    font-size: 26px;
+  }
+  .customize-bed-box-1 h1{
+    width: 154px;
+    height: 154px;
+    font-size: 80px; 
+    padding-top: 30px;
+  }
+  .customize-bed-box-1 h1:after{
+    background-size: contain;
+  }
 }
 @media screen and (max-width:1350px) {
   .sub-category-filter-left-outer {
@@ -637,6 +685,9 @@
 
   .price-detials-outer {
     flex-wrap: wrap;
+  }
+  .customize-bed-box-1 {
+    width: 60%; 
   }
 }
 @media screen and (max-width:1250px) {
@@ -768,6 +819,9 @@
     width: calc(50% + 75px);
     margin-bottom: 0;
     margin-top: 10px;
+  }
+  .customize-bed-box-1 {
+    width: 70%; 
   }
 }
 @media screen and (max-width:1100px) {
@@ -1203,8 +1257,15 @@
   }
 
   .mid-btm-right {
+    margin: 0 auto;
     margin-top: 0;
     margin-bottom: 50px;
+    max-width: 70% !important;
+  }
+  .mid-location-left{
+    max-width: 70% !important;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .mid-btm-left-bottom-outer {
@@ -1311,6 +1372,49 @@
     background: -ms-linear-gradient(left, rgba(246,246,246,1) 0%, rgba(246,246,246,0.99) 51%, rgba(246,246,246,0.71) 100%);
     background: linear-gradient(to right, rgba(246,246,246,1) 0%, rgba(246,246,246,0.99) 51%, rgba(246,246,246,0.71) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '#f6f6f6', endColorstr='#f6f6f6', GradientType=1 );
+  }
+  .enquiry-modal-left{
+   display: none;
+  }
+  .enquiry-modal-right{
+    max-width: 100% !important;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    padding: 50px !important;
+  }
+  .customize-bed-box-1 {
+    width: 100%; 
+    display: block !important;
+    text-align: center;
+  }
+  .customize-bed-box-1 aside {
+    max-width: 100%;
+    margin-top: 64px;
+  }
+  .customize-bed-box-1 h1{
+    margin: 0 auto;
+  }
+  .customize-bed-box-1.cus-option-2 h1:after,.customize-bed-box-1.cus-option-4 h1:after{
+    transform: rotate(90deg);
+  }
+ 
+  .customize-bed-box-1 h1:after{
+    transform: rotate(-90deg);
+    left: -23px;
+    right: -20px;
+    bottom: -20px;
+    top: -20px;
+  }
+  .customize-bed-box-1 h1:before{
+    transform: rotate(-90deg);
+    left: 50%;
+    margin-left: -7.5%;
+    top: auto;
+    bottom: -53px;
+  } 
+  .customize-bed-box-1.cus-option-2 h1:before,.customize-bed-box-1.cus-option-4 h1:before{
+    transform: rotate(-90deg);
+    right: 50%;
   }
 }
 @media screen and (max-width:960px) {
@@ -1832,6 +1936,18 @@
     max-width: 90%;
     margin: 0 auto;
   }
+  .enquiry-modal-right{
+    padding:20px 15px !important;
+  }
+  .enquiry-modal-right aside{
+    padding-bottom: 20px;
+  }
+  .enquiry-modal-right .form-group {
+    margin-bottom: 6px;
+  }
+  .enquiry-modal .close img {
+    max-width: 18px;
+  }
 
 }
 @media screen and (max-width:575px) {
@@ -2037,6 +2153,12 @@
   .compare-other h4 {
     font-size: 14px;
   }
+  .mid-btm-right { 
+    max-width: 90% !important;
+  }
+  .mid-location-left{
+    max-width: 90% !important; 
+  }
 }
 @media screen and (max-width:450px) {
   .product-list {
@@ -2166,6 +2288,9 @@
 
   .dimension-dec h4 {
     font-size: 17px;
+  }
+  .customize-bed-box-1 h5 {
+    font-size: 18px;
   }
 }
 @media screen and (max-width:350px) {
