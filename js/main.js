@@ -1,18 +1,29 @@
+var addClassOnScroll = function () {
+  var windowTop = $(window).scrollTop();
+  $(".category-sec-pic").each(function (index, elem) {
+    var offsetTop = $(elem).offset().top;
+    var outerHeight = $(this).outerHeight(true);
+
+    if (windowTop > offsetTop - 150 && windowTop < offsetTop + outerHeight) {
+      var elemId = $(elem).attr("id");
+      $(".sub-category-nav-list li").removeClass("active");
+      $(".sub-category-nav-list li a[href='#" + elemId + "']")
+        .parent()
+        .addClass("active");
+    } else {
+      var elemId = $(elem).attr("id");
+      $(".sub-category-nav-list li a[href='#" + elemId + "']")
+        .parent()
+        .removeClass("active");
+    }
+  });
+};
+
 (function () {
-  // setTimeout(() => {
-  //   const scroll = new LocomotiveScroll({
-  //     el: document.querySelector("#js-scroll"),
-  //     smooth: true,
-  //     getSpeed: true,
-  //     getDirection: true,
-  //     useKeyboard: true,
-  //   });
-  //   scroll.on("call", (value, way, obj) => {
-  //     if (value === "animate") {
-  //       $(obj.el).addClass($(obj.el).data("animate"));
-  //     }
-  //   });
-  // }, 1000);
+  var $categorySection = $(".category-sec-pic");
+  $(window).on("scroll", function () {
+    $categorySection.length > 1 ? addClassOnScroll() : "";
+  });
   customCursor();
   modalId = $("#gallery-modal");
 })();
@@ -271,14 +282,27 @@ function disableButtons(counter_max, counter_current) {
 
 $(".scrollTo").click(function (e) {
   e.preventDefault();
+  $(".sub-category-nav-list li").removeClass("active");
+  $(this).parent().addClass("active");
   $("html, body").animate(
     {
-      scrollTop: $($(this).attr("href")).offset().top,
+      scrollTop: $($(this).attr("href")).offset().top - 100,
     },
     500
   );
   return false;
 });
+
+function isInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
 
 $(document).keydown(function (e) {
   switch (e.which) {
