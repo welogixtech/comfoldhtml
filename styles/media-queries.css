@@ -2022,6 +2022,13 @@
   .product-list h4 {
     min-height: inherit;
   }
+  .header__logo {
+    width: 120px;
+  }
+  
+  .header__right-bottom {
+    margin-top: 20px;
+  }
 }
 @media screen and (max-width:400px) {
   .mid-pro-box h4 {
@@ -2038,13 +2045,8 @@
     margin-bottom: 20px;
   }
 
-  .header__logo {
-    width: 120px;
-  }
 
-  .header__right-bottom {
-    margin-top: 26px;
-  }
+
 
   .mid-pro-box {
     width: 49%;

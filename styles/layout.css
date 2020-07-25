@@ -3530,8 +3530,8 @@ h3.compare-other {
 .dd-option-image,
 .dd-selected-image {
   vertical-align: middle;
-  float: left;
-  margin-right: 5px;
+  /* float: left; */
+  margin-right: 8px;
   max-width: 25px;
 }
 

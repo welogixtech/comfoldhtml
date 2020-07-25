@@ -94,7 +94,7 @@
 <section class="category-top-wrapper">
   <div class="pagewrap">
     <div class="category-sec d-flex">
-      <div class="category-sec-pic col-lg-7 col-md-7"><img src="images/extendableTable/extending_tables.png" alt="" class="img-fluid wow fadeInRight" data-wow-delay="0.1s" data-mouse="view" data-mouse-text="shop Vertical wall bed" onclick="window.location.href='product_listing.html';"/></div>
+      <div class="category-sec-pic col-lg-7 col-md-7" id="extendingTable"><img src="images/extendableTable/extending_tables.png" alt="" class="img-fluid wow fadeInRight" data-wow-delay="0.1s" data-mouse="view" data-mouse-text="shop Vertical wall bed" onclick="window.location.href='product_listing.html';"/></div>
       <div class="category-sec-details col-lg-5 col-md-5">
         <h4 class="wow fadeInLeft" data-wow-delay="0.1s">Extending tables</h4>
         <aside class="wow fadeInLeft" data-wow-delay="0.2s">Build your wall bed online!<br>
@@ -103,7 +103,7 @@
       </div>
     </div>
     <div class="category-sec d-flex">
-      <div class="category-sec-pic col-lg-7 col-md-7"><img src="images/extendableTable/coffe_table.png" alt="Coffee Table" class="img-fluid wow fadeInLeft" data-wow-delay="0.1s" data-mouse="view" data-mouse-text="shop Horizontal wall bed" onclick="window.location.href='product_listing.html';"/></div>
+      <div class="category-sec-pic col-lg-7 col-md-7" id="coffeeTable"><img src="images/extendableTable/coffe_table.png" alt="Coffee Table" class="img-fluid wow fadeInLeft" data-wow-delay="0.1s" data-mouse="view" data-mouse-text="shop Horizontal wall bed" onclick="window.location.href='product_listing.html';"/></div>
       <div class="category-sec-details col-lg-5 col-md-5">
         <h4 class="wow fadeInRight" data-wow-delay="0.1s">Coffee tables</h4>
         <aside class="wow fadeInRight" data-wow-delay="0.2s">Build your wall bed online!<br>
@@ -112,7 +112,7 @@
       </div>
     </div>
     <div class="category-sec d-flex">
-      <div class="category-sec-pic col-lg-7 col-md-7"><img src="images/extendableTable/study_table.png"  alt="" class="img-fluid wow fadeInRight" data-wow-delay="0.1s" data-mouse="view" data-mouse-text="shop Bunker bed" onclick="window.location.href='product_listing.html';"/></div>
+      <div class="category-sec-pic col-lg-7 col-md-7" id="studyTable"><img src="images/extendableTable/study_table.png"  alt="" class="img-fluid wow fadeInRight" data-wow-delay="0.1s" data-mouse="view" data-mouse-text="shop Bunker bed" onclick="window.location.href='product_listing.html';"/></div>
       <div class="category-sec-details col-lg-5 col-md-5">
         <h4 class="wow fadeInLeft" data-wow-delay="0.1s">Study tables</h4>
         <aside class="wow fadeInLeft" data-wow-delay="0.2s">Build your wall bed online!<br>
@@ -478,11 +478,15 @@
       <div class="modal-body"> 
         <img id="image-gallery-image" src="">
       </div> 
-      <div class="modal-footer">
-          <button type="button" class="btn btn-secondary float-left" id="show-previous-image"><i class="fa fa-arrow-left"></i>
+      <div class="modal-footer p-0">
+          <button type="button" class="btn btn-secondary gallery-arw-left gallery-arw" id="show-previous-image"><svg viewBox="0 0 284.935 284.936" width="12" height="12">
+        <path d="M110.488,142.468L222.694,30.264c1.902-1.903,2.854-4.093,2.854-6.567c0-2.474-0.951-4.664-2.854-6.563L208.417,2.857 C206.513,0.955,204.324,0,201.856,0c-2.475,0-4.664,0.955-6.567,2.857L62.24,135.9c-1.903,1.903-2.852,4.093-2.852,6.567 c0,2.475,0.949,4.664,2.852,6.567l133.042,133.043c1.906,1.906,4.097,2.857,6.571,2.857c2.471,0,4.66-0.951,6.563-2.857 l14.277-14.267c1.902-1.903,2.851-4.094,2.851-6.57c0-2.472-0.948-4.661-2.851-6.564L110.488,142.468z"></path>
+      </svg></i>
           </button>
 
-          <button type="button" id="show-next-image" class="btn btn-secondary float-right"><i class="fa fa-arrow-right"></i>
+          <button type="button" id="show-next-image" class="btn btn-secondary gallery-arw-right gallery-arw"><svg viewBox="0 0 492.004 492.004" width="12" height="12">
+        <path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12 c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028 c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265 c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"></path>
+      </svg>
           </button>
       </div>
     </div>
