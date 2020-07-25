@@ -88,14 +88,15 @@ $(document).ready(function () {
         0: {
           items: 1,
         },
-        980: {
+        780: {
           items: 2,
+          margin: 50,
         },
         1150: {
           items: 2,
           nav: true,
           dots: true,
-          margin: 40,
+          margin: 100,
         },
       },
     });
