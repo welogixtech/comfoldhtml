@@ -92,8 +92,15 @@
   <div class="pagewrap row">
     <div class="col-lg-3 pl-0 sub-category-filter-left-outer">
       <div class="sub-category-filter-left">
-        <h3 href="#ExploreMore" aria-expanded="false" data-toggle="collapse" class="collapsed">Explore More</h3>
-		  <div class="sub-category-filter-inr collapse mobile-collapse" id="ExploreMore">
+        <h3  aria-expanded="false" class="mobile-filtter js-slideIn" data-slideinid="#ExploreMore">Filters</h3>
+        <div class="filter-backdrop"></div>
+		  <div class="sub-category-filter-inr animated" id="ExploreMore">
+        <h3 class="mobile-filter-head">Filters
+
+          <button data-mouse="btn" type="button" class="close js-slideInClose" data-slideinid="#ExploreMore"  aria-label="Close">
+            <span aria-hidden="true"><img src="images/close-btn-2.svg" alt=""></span>
+          </button>
+        </h3>
         <div class="sub-category-filter-sec">
           <h4 data-toggle="collapse" data-mouse="btn" href="#ChoosebedType" aria-expanded="true">Choose bed type</h4>
           <div class="collapse show" id="ChoosebedType">
@@ -457,6 +464,8 @@
 <!---FOOTER--->
 
 </main>
+<div class="customeBackDrop"></div>
+
 
 <!-- mouse cursor-->
 <div class="mouse js-mouse" data-mouse="" style="transform: translate3d(66px, 402px, 0px);">

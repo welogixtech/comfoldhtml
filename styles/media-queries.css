@@ -1652,6 +1652,31 @@
 
   .sub-category-filter-inr {
     padding-bottom: 30px;
+    position: fixed;
+    top: 50px;
+    right: 0;
+    width: 300px;
+    height: calc(100vh - 50px);
+    z-index: 99;
+    background-color: #fff;
+    padding: 20px;
+    overflow: auto;
+    border-radius: 8px 0 0 0;
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    display: none;
+  }
+
+  .filter-backdrop {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #1e1e23;
+    opacity: .6;
+    z-index: 90;
+    left: 0;
+    top: 0;
+    display: none;
   }
 
   .sub-category-filter-left {
@@ -1659,9 +1684,15 @@
     padding-bottom: 0;
   }
 
+  .sub-category-filter-inr .mobile-filter-head,
   .sub-category-filter-left h3:after,
   .sub-category-filter-left h3:before {
     display: block;
+  }
+
+  .sub-category-filter-left h3.mobile-filter-head:after,
+  .sub-category-filter-left h3.mobile-filter-head:before {
+    display: none;
   }
 
   .listing-sub-category-nav ul {

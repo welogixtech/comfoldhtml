@@ -34,7 +34,7 @@
         <li><a href="#" data-mouse="btn" ><img src="images/user_icon.svg" alt=""/></a></li>
         <li><a href="#" data-mouse="btn"><img src="images/search_icon.svg" alt="" data-toggle="modal" data-target="#search_modal"/></a></li>
         <li class="header__wish-list"><a href="#" data-mouse="btn"><img src="images/heart_icon.svg" alt=""/></a></li>
-        <li><a href="#" data-mouse="btn"><img src="images/cart_icon.svg" alt=""/></a></li>
+        <li><a href="#" data-mouse="btn" class="js-slideIn" data-slideinid="#cartSideBar"><img src="images/cart_icon.svg" alt=""/></a></li>
       </ul>
     </div>
     <div class="header__nav">
@@ -636,6 +636,20 @@ product service</h4>
 <!---FOOTER--->
 
 </main>
+<div class="customeBackDrop"></div>
+<!-- Cart Side Bar -->
+<div class="cartSideBar" id="cartSideBar">
+    <button data-mouse="btn" type="button" class="close js-slideInClose" data-slideinid="#cartSideBar" aria-label="Close">
+      <span aria-hidden="true"><img src="images/close-btn-2.svg" alt=""></span>
+    </button>
+    <h3>Shopping cart</h3>
+    <div class="cart-items">
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+</div>
+
+
 <!-- Enquiry -->
 <div class="modal fade" id="bookAcall" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-custom-width" role="document">
