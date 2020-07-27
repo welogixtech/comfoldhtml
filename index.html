@@ -34,7 +34,7 @@
         <li><a href="#" data-mouse="btn" ><img src="images/user_icon.svg" alt=""/></a></li>
         <li><a href="#" data-mouse="btn"><img src="images/search_icon.svg" alt="" data-toggle="modal" data-target="#search_modal"/></a></li>
         <li class="header__wish-list"><a href="#" data-mouse="btn"><img src="images/heart_icon.svg" alt=""/></a></li>
-        <li><a href="#" data-mouse="btn" class="js-slideIn" data-slideinid="#cartSideBar"><img src="images/cart_icon.svg" alt=""/></a></li>
+        <li><a href="#" data-mouse="btn" class="js-slideIn" data-slideinid="#cartSideBar"><span class="cart-count">0</span><img src="images/cart_icon.svg" alt=""/></a></li>
       </ul>
     </div>
     <div class="header__nav">
@@ -638,15 +638,43 @@ product service</h4>
 </main>
 <div class="customeBackDrop"></div>
 <!-- Cart Side Bar -->
-<div class="cartSideBar" id="cartSideBar">
+<div class="cartSideBar " id="cartSideBar">
+  <div class="d-flex flex-column cartSideBar-inner"> 
     <button data-mouse="btn" type="button" class="close js-slideInClose" data-slideinid="#cartSideBar" aria-label="Close">
       <span aria-hidden="true"><img src="images/close-btn-2.svg" alt=""></span>
     </button>
     <h3>Shopping cart</h3>
+    
     <div class="cart-items">
-      <div class="item"></div>
-      <div class="item"></div>
+      <div class="item d-flex">
+        <img src="images/wall_bed_pic3.png" width="60" height="60" alt="">
+        <aside>
+          <h4>Vertical wall bed</h4>
+          1X₹2000
+        </aside>
+        <span class="cart-delete" data-mouse="btn"><img src="images/close-btn-2.svg" alt=""></span>
+      </div>
+      <div class="item d-flex">
+        <img src="images/wall_bed_pic3.png" width="60" height="60" alt="">
+        <aside>
+          <h4>Vertical wall bed</h4>
+          1X₹2000
+        </aside>
+        <span class="cart-delete" data-mouse="btn"><img src="images/close-btn-2.svg" alt=""></span>
+      </div>
     </div>
+    <div class="cartSideBar-total-wrap mt-auto">
+    <div class="cartSideBar-total">
+      <div class="d-flex justify-content-between cartSideBar-total-sec">Sub total <span class="cartSideBar-total-value">₹20000.00</span></div>
+      <div class="d-flex justify-content-between cartSideBar-total-sec">VAT(20%) <span class="cartSideBar-total-value">₹500.00</span></div>
+    </div>
+    <div class="d-flex justify-content-between cartSideBar-total-sec-2">Total<span class="cartSideBar-total-value">₹20500.00</span></div>
+    <div class="cartSideBar-total__btns">
+      <button data-mouse="btn" type="button" class="btn btn-outline-primary-comf btn-block">View cart</button>
+      <button data-mouse="btn" type="button" class="btn btn-secondary-comf btn-block">Check out</button>
+    </div>
+  </div>
+</div>
 </div>
 
 
