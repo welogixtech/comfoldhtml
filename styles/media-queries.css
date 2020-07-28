@@ -19,7 +19,7 @@
     padding-right: 25% !important;
   }
 }
-@media screen and (max-width:1580px) {
+/* @media screen and (max-width:1580px) {
   .navbar-nav-custom li a {
     margin: 0 0 0 26px !important;
   }
@@ -50,8 +50,8 @@
   .mid-projects-wrap {
     width: 100%;
   }
-}
-@media screen and (max-width:1430px) {
+} */
+@media screen and (max-width:1680px) {
   .pagewrap {
     width: 90%;
   }
