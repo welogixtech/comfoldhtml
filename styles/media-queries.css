@@ -746,6 +746,34 @@
   .contact-page-adress h4 i {
     font-size: 45px;
   }
+  .project-top-dec h4{
+    font-size: 30px;
+    margin: 0 0 20px 0;
+  }
+  .project-gallery h4{
+    font-size: 30px;
+  }
+  .project-top-dec{
+    width: 70%;
+  }
+  .project-gallery-wraper .grid-item img{
+    padding: 10px;
+  }
+  .client-sec-box h4 {
+    font-size: 24px;
+  }
+  .client-sec-box {
+    width: 50%;
+  }
+  .projects-mid-bottom .page-nav {
+    font-size: 26px;
+  }
+  .projects-mid-bottom h4 {
+    font-size: 24px;
+  }
+  .projects-mid-bottom { 
+    padding: 55px 0;
+  }
 }
 @media screen and (max-width: 1350px) {
   .sub-category-filter-left-outer {
@@ -1575,7 +1603,7 @@
   }
 
   .cart-list-product img {
-    max-width: 100px;
+    width: 100px;
     height: auto;
   }
   .cart-list-delivery-date,
@@ -1624,6 +1652,54 @@
   .contact-page-form .form-control {
     min-height: auto;
     margin-bottom: 0;
+  }
+  .client-sec-box {
+    width: 80%;
+  }
+  .project-gallery .pagewrap {
+    width: 90%;
+  }
+  .project-top-dec {
+    width: 90%;
+    margin-top: -50px;
+    padding: 40px 5% 40px 30px;
+  }
+  .project-gallery {
+    padding-top: 90px;
+  }
+  .project-gallery-wraper .grid-item img {
+    padding: 5px;
+  }
+  .projects-mid-bottom .pagewrap{
+    display: block !important;
+  }
+  .projects-mid-bottom {
+    padding: 25px 0;
+  }
+  .projects-mid-bottom h4{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .projects-mid-bottom .page-nav{
+    float: left;
+    font-size: 17px;
+    padding: 0 35px;
+  }
+  .projects-mid-bottom .page-nav img{
+    margin-top: -7.5px;
+  }
+  .projects-mid-bottom .page-nav.page-next{
+    float: right;
+  }
+  .projects-mid-bottom:after{
+    content: "";
+    clear: both;
+    display: block;
+  }
+  .client-sec-box h4{
+    padding-bottom: 62px;
+    background-size: 50px;
   }
 }
 @media screen and (max-width: 960px) {
@@ -2206,7 +2282,7 @@
   }
 
   .cart-list-product img {
-    max-width: 75px;
+    width: 75px;
   }
 
   .cart-list-product aside h4 {
@@ -2385,6 +2461,12 @@
   .contact-page-form {
     padding: 15px !important;
     margin-top: -10px;
+  }
+  .project-top-dec { 
+    margin-top: -10px; 
+  }
+  .client-sec-box {
+    width: 100%;
   }
 }
 @media screen and (max-width: 500px) {
