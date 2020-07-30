@@ -743,11 +743,11 @@
     font-size: 45px;
   }
   .project-top-dec h4{
-    font-size: 30px;
+    font-size: 26px;
     margin: 0 0 20px 0;
   }
   .project-gallery h4{
-    font-size: 30px;
+    font-size: 26px;
   }
   .project-top-dec{
     width: 70%;
@@ -1640,11 +1640,14 @@
     margin-top: -50px;
     padding: 40px 5% 40px 30px;
   }
+  .project-top-dec aside:before{
+    left: 2.5%;
+  }
   .project-gallery {
     padding-top: 90px;
   }
   .project-gallery-wraper .grid-item img {
-    padding: 5px;
+    padding: 3px;
   }
   .projects-mid-bottom .pagewrap{
     display: block !important;
@@ -1657,6 +1660,9 @@
     font-size: 18px;
     margin-bottom: 10px;
   }
+  .projects-mid-bottom h4 br {
+    display: none;
+}
   .projects-mid-bottom .page-nav{
     float: left;
     font-size: 17px;
