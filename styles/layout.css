@@ -4309,7 +4309,9 @@ h3.compare-other {
   text-transform: uppercase;
 }
 .projects-mid-bottom{
-  background: #f5f5f5;
+  background: url(../images/view-project-bg.png) no-repeat;
+  background-size: cover;
+  /* background: #f5f5f5; */
   padding: 75px 0;
 }
 .projects-mid-bottom h4{
@@ -4369,12 +4371,13 @@ position: absolute;
 .project-gallery-wraper .grid-item {
   width: 33.333%;
   overflow: hidden;
+  border: 0;
   
 }
 .project-gallery h4{
   font-size: 40px;
   font-weight: normal;
-  margin: 0 0 5px 0;
+  margin: 0 0 -10px 0;
 }
 .project-gallery-wraper .grid-item img {
   width: 100%;
