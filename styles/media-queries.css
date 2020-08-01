@@ -2182,12 +2182,21 @@
 
   .about-top-right {
     width: 100%;
-    margin: 0 0;
+    margin: -20px 0 0 0;
+  }
+
+  .row.our-story-content aside {
+    margin-bottom: 20px;
   }
 
   .about-top-left {
     width: 100%;
     padding: 50px;
+  }
+
+  .about-top-main .pagewrap {
+    display: flex;
+    flex-direction: column-reverse;
   }
 
   .our-mission-box {
