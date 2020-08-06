@@ -922,7 +922,7 @@ header {
 .mid-btm-left-bottom {
   background: url("../images/dot_bg.svg") no-repeat top right;
   padding-top: 40px;
-  max-width: 996px;
+  max-width: 850px;
 }
 
 .mid-btm-box {
@@ -4523,9 +4523,8 @@ a.map-external-link img {
 
 .our-story-main {
   padding: 80px 0;
-  background: url(../images/aboutus/our-story-pattern.svg) no-repeat center #221C35;
-  background-attachment: fixed;
-  background-size: cover;
+  background: url(../images/aboutus/our-story-pattern.svg) no-repeat center #221C35; 
+  background-size: 100% 100%;
 }
 
 .our-story-main-head {
