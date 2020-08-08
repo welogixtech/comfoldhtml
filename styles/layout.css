@@ -668,6 +668,7 @@ header {
   padding-bottom: 70px;
   position: relative;
 }
+ 
 
 .why-comfold-sec:after {
   content: "";
@@ -687,8 +688,9 @@ header {
 }
 
 .why-comfold-box {
-  width: 206px;
+  width: 240px;
   height: 290px;
+  margin: 0 25px;
   position: relative;
   text-align: center;
   border-radius: 5px 5px 5px 5px;
@@ -768,14 +770,14 @@ header {
   position: absolute;
   width: 100%;
   text-align: center;
-  bottom: 8px;
+  bottom: 25px;
 }
 
 .why-comfold-box h4 {
   margin: 0;
   font-size: 20px;
   color: #221c35;
-  font-weight: normal;
+  font-weight: 600;
   text-align: center;
   padding: 25px 12px;
   position: relative;
