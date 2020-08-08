@@ -333,19 +333,18 @@
   .mid-project-box aside {
     font-size: 14px;
   }
-
+   
   .why-comfold-box h4 {
     font-size: 17px;
   }
 
   .why-comfold-box {
     width: 180px;
-    height: 250px;
-    margin: 0 5px;
+    height: 250px; 
   }
 
   .why-comfold-pic img {
-    width: 76%;
+    width: 60%;
     height: auto;
   }
 
@@ -793,6 +792,7 @@
   .our-story-main-head {
     font-size: 30px;
   }
+
 }
 
 @media screen and (max-width: 1350px) {
@@ -830,6 +830,7 @@
     width: 40%;
     padding: 100px 0;
   }
+  
 }
 
 @media screen and (max-width: 1250px) {
@@ -1318,13 +1319,12 @@
   }
 
   .why-comfold-box {
-    flex: 1 30%;
-    margin: 1%;
-    height: 290px;
+    flex: 1 40%;
+    margin: 2%; 
   }
 
   .why-comfold-pic img {
-    max-width: 100%;
+    max-width: 60%;
     width: auto;
     height: auto;
   }
@@ -2442,7 +2442,10 @@
   .why-comfold-box {
     flex: 1 40%;
     margin: 2%;
-    height: 240px;
+    height: 190px;
+  }
+  .why-comfold-pic img{
+    max-width: 75px;
   }
 
   .why-comfold-box h4 {
@@ -2800,6 +2803,9 @@
 
   .our-mission-box {
     padding: 50px 25px;
+  }
+  .why-comfold-box { 
+    height: 190px;
   }
 }
 
