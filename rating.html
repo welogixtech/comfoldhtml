@@ -1,0 +1,76 @@
+<style>
+  .star-ratings-css {
+    unicode-bidi: bidi-override;
+    color: #c5c5c5;
+    font-size: 25px;
+    height: 25px;
+    width: 100px;
+    margin: 0 auto;
+    position: relative;
+    text-shadow: 0 1px 0 #a2a2a2;
+  }
+  .star-ratings-css::before {
+    content: "★★★★★";
+    opacity: 0.3;
+  }
+
+  [title="0"]::after {
+    width: 0%;
+  }
+  [title=".5"]::after {
+    width: 10%;
+  }
+  [title="1"]::after {
+    width: 20%;
+  }
+  [title="1.5"]::after {
+    width: 31%;
+  }
+  [title="2"]::after {
+    width: 40%;
+  }
+  [title="2.5"]::after {
+    width: 52.5%;
+  }
+  [title="3"]::after {
+    width: 63%;
+  }
+  [title="3.5"]::after {
+    width: 73.5%;
+  }
+  [title="4"]::after {
+    width: 85%;
+  }
+  [title="4.5"]::after {
+    width: 94.5%;
+  }
+  [title="5"]::after {
+    width: 100%;
+  }
+  .star-ratings-css::after {
+    color: gold;
+    content: "★★★★★";
+    text-shadow: 0 1px 0 #ab5414;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    left: 0;
+    top: 0;
+    width: attr(rating);
+    overflow: hidden;
+  }
+</style>
+
+<h1>5 STAR RATINGS</h1>
+
+<div class="star-ratings-css" title="0"></div>
+<div class="star-ratings-css" title=".5"></div>
+<div class="star-ratings-css" title="1"></div>
+<div class="star-ratings-css" title="1.5"></div>
+<div class="star-ratings-css" title="2"></div>
+<div class="star-ratings-css" title="2.5"></div>
+<div class="star-ratings-css" title="3"></div>
+<div class="star-ratings-css" title="3.5"></div>
+<div class="star-ratings-css" title="4"></div>
+<div class="star-ratings-css" title="4.5"></div>
+<div class="star-ratings-css" title="5"></div>
