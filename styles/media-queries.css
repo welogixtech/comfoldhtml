@@ -1319,7 +1319,7 @@
   }
 
   .why-comfold-box {
-    flex: 1 40%;
+    flex: 1 20%;
     margin: 2%; 
   }
 
@@ -2202,6 +2202,10 @@
   .our-mission-box {
     width: 100%;
     padding: 50px;
+  }
+  .why-comfold-box {
+    flex: 1 40%;
+    margin: 2%; 
   }
 }
 
